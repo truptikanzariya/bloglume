@@ -15,12 +15,12 @@ Features:
 
 Installation:
 -------------
-1. Upload the `cleanpress-org` folder to your `/wp-content/themes/` directory.
+1. Upload the `bloglume` folder to your `/wp-content/themes/` directory.
 2. Activate the theme via the WordPress admin dashboard under Appearance > Themes.
 
 Support:
 --------
-For support or to report issues, visit: https://github.com/your-repo/cleanpress-org
+For support or to report issues, visit: https://github.com/truptikanzariya/bloglume
 
 License:
 --------
