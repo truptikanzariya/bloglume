@@ -1,0 +1,265 @@
+/* === Header Menu Toggle (Mobile) === */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.75rem;
+    z-index: 1001;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.menu-toggle .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #222;
+    position: relative;
+}
+
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #222;
+    transition: 0.3s ease;
+}
+
+.menu-toggle .hamburger::before {
+    top: -8px;
+}
+
+.menu-toggle .hamburger::after {
+    top: 8px;
+}
+
+/* === Navigation Styles === */
+.main-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: transparent;
+    position: relative;
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #222;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+    background: #e2e6ea;
+}
+
+/* === Branding === */
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+/* === Images in Post === */
+.post-thumbnail img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+}
+
+/* === Layout Wrapper for Content + Sidebar === */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.content-area {
+    flex: 2;
+    min-width: 0;
+}
+
+.sidebar-area {
+    flex: 1;
+    min-width: 250px;
+}
+/* === Comment Form Container === */
+.comments-area {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.comments-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* === Form Fields === */
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+/* === Checkbox (Remember Me) === */
+.comment-form-cookies-consent {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.comment-form-cookies-consent input {
+    margin-right: 0.5rem;
+}
+
+/* === Submit Button === */
+.comment-form input[type="submit"] {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form input[type="submit"]:hover {
+    background-color: #005177;
+}
+
+/* === Notices (Email Privacy, Required Fields) === */
+.comment-notes,
+.logged-in-as,
+.form-allowed-tags {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.comments-area h3 {
+    border-left: 4px solid #0073aa;
+    padding-left: 12px;
+    color: #222;
+}
+
+/* === Responsive Breakpoints === */
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+    .main-navigation,
+    .main-navigation ul {
+        gap: 1rem;
+    }
+}
+
+/* Small Screens (Tablets & Phones) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: #f8f9fa;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .main-navigation.menu-open {
+        display: flex;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-navigation li {
+        justify-content: center;
+    }
+
+    .site-branding {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar-area {
+        width: 100%;
+    }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .main-navigation {
+        top: 50px;
+        padding: 0.5rem 0;
+    }
+
+    .main-navigation a {
+        padding: 0.75rem 0.5rem;
+        font-size: 1rem;
+    }
+
+    .site-branding {
+        font-size: 1.1rem;
+    }
+}
