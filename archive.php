@@ -1,55 +1,49 @@
 <?php
 /**
- * The main template file
+ * The template for displaying archive pages.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Separate_Blog
+ * @package bloglume
  */
 
-get_header(); ?>
-<?php separate_blog_banner(); ?>
-<section class="separate-posts no-padding-top">
-	<div class="container">
+get_header();
+?>
+
+<main id="primary" class="site-main">
+
+	<?php if ( have_posts() ) : ?>
+
+		<header class="page-header">
+			<?php
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
+
 		<?php
-		if ( have_posts() ) : $GLOBALS['count'] = 1;
+		while ( have_posts() ) :
+			the_post();
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+			get_template_part( 'template-parts/content', get_post_type() );
 
-				<?php
-			endif;
+		endwhile;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+		the_posts_pagination(
+			array(
+				'mid_size'  => 2,
+				'prev_text' => esc_html__( '« Prev', 'bloglume' ),
+				'next_text' => esc_html__( 'Next »', 'bloglume' ),
+			)
+		);
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-					$GLOBALS['count'] ++;
-				endwhile;
-				
-				the_posts_pagination( array(
-					'mid_size'  => 2,
-					'prev_text' => __( '« Prev', 'bloglume' ),
-					'next_text' => __( 'Next »', 'bloglume' ),
-				) );
+	else :
 
-			else :
+		get_template_part( 'template-parts/content', 'none' );
 
-				get_template_part( 'template-parts/content', 'none' );
+	endif;
+	?>
 
-			endif; ?>
-		</div>
-	</section>
-	<?php get_footer();
+</main><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

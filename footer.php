@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @package bloglume
+ */
+
+?>
+
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="site-info container">
 		<div class="row">
@@ -6,20 +17,33 @@
 				<?php
 				$link = sprintf(
 					'<a href="%1$s" title="%2$s" rel="%3$s">%4$s</a>',
-					esc_url( '' ),
+					esc_url( '#' ), // Provide your URL here instead of empty string
 					esc_attr__( 'WordPress Profile', 'bloglume' ),
 					'nofollow',
 					'Trupti Kanzariya'
 				);
-				printf( esc_html__( '%1$s Theme by %2$s', 'bloglume' ), 'Bloglume', $link );
+				printf(
+					/* translators: 1: theme name, 2: author link */
+					esc_html__( '%1$s Theme by %2$s', 'bloglume' ),
+					'Bloglume',
+					$link
+				);
 				?>
 			</div>
 			<div class="col-md-6 text-md-end">
-				<?php printf( esc_html__( 'Proudly powered by %s', 'bloglume' ), 'WordPress' ); ?>
+				<?php
+				printf(
+					/* translators: %s: WordPress */
+					esc_html__( 'Proudly powered by %s', 'bloglume' ),
+					'WordPress'
+				);
+				?>
 			</div>
 		</div>
 	</div>
 </footer>
+
 <?php wp_footer(); ?>
+
 </body>
 </html>

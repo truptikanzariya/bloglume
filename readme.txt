@@ -1,31 +1,34 @@
-CleanPress Theme
-================
+=== bloglume ===
 
-Description:
-------------
-CleanPress is a lightweight, responsive WordPress theme designed for clarity and speed. Ideal for blogs, portfolios, and business websites.
+Contributors: automattic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-Features:
----------
-- Responsive design
-- Customizable header and footer
-- Widget-ready sidebars
-- SEO optimized
-- Clean, minimal codebase
+Requires at least: 4.5
+Tested up to: 5.4
+Requires PHP: 5.6
+Stable tag: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
 
-Installation:
--------------
-1. Upload the `bloglume` folder to your `/wp-content/themes/` directory.
-2. Activate the theme via the WordPress admin dashboard under Appearance > Themes.
+A starter theme called bloglume.
 
-Support:
---------
-For support or to report issues, visit: https://github.com/truptikanzariya/bloglume
+== Description ==
 
-License:
---------
-This theme is licensed under the GNU General Public License v2 or later.
+Description
 
-Changelog:
-----------
-- v1.0.0: Initial release
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+bloglume includes support for WooCommerce and for Infinite Scroll in Jetpack.
+
+== Changelog ==
+
+= 1.0 - May 12 2015 =
+* Initial release

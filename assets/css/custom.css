@@ -1,16 +1,42 @@
-/* === Header Menu Toggle (Mobile) === */
+/* === Header Layout === */
+.header-inner {
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+/* Logo */
+.site-branding {
+    margin-bottom: 1rem;
+}
+.site-branding img {
+    max-height: 70px;
+    height: auto;
+    width: auto;
+}
+.site-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+}
+.site-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* === Navigation === */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.75rem;
-    z-index: 1001;
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 1001;
 }
-
 .menu-toggle .hamburger {
     display: block;
     width: 24px;
@@ -18,7 +44,6 @@
     background: #222;
     position: relative;
 }
-
 .menu-toggle .hamburger::before,
 .menu-toggle .hamburger::after {
     content: "";
@@ -28,38 +53,25 @@
     background: #222;
     transition: 0.3s ease;
 }
-
 .menu-toggle .hamburger::before {
     top: -8px;
 }
-
 .menu-toggle .hamburger::after {
     top: 8px;
 }
 
-/* === Navigation Styles === */
-.main-navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: transparent;
-    position: relative;
-}
-
 .main-navigation ul {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 1rem;
 }
-
 .main-navigation li {
     display: flex;
-    align-items: center;
 }
-
 .main-navigation a {
     text-decoration: none;
     color: #222;
@@ -67,19 +79,13 @@
     border-radius: 4px;
     transition: background 0.2s ease;
 }
-
 .main-navigation a:hover,
 .main-navigation a:focus {
-    background: #e2e6ea;
+    background: #eee;
 }
 
 /* === Branding === */
-.site-branding {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0;
-}
+
 
 /* === Images in Post === */
 .post-thumbnail img {
@@ -197,7 +203,33 @@
         gap: 1rem;
     }
 }
+/* === Mobile View === */
+@media (max-width: 991px) {
+    .menu-toggle {
+        display: block;
+    }
 
+    .main-navigation {
+        display: none;
+        width: 100%;
+        background: #f8f9fa;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        z-index: 999;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-navigation.menu-open {
+        display: block;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* Small Screens (Tablets & Phones) */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -206,44 +238,22 @@
 
     .main-navigation {
         display: none;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
         background: #f8f9fa;
         position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
+        top: 100%;
+        left: 0;
         padding: 1rem 0;
-        z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .main-navigation.menu-open {
-        display: flex;
+        display: block;
     }
 
     .main-navigation ul {
         flex-direction: column;
-        gap: 1rem;
-    }
-
-    .main-navigation li {
-        justify-content: center;
-    }
-
-    .site-branding {
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-
-    .content-wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar-area {
-        width: 100%;
+        align-items: center;
     }
 }
 
