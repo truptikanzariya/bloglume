@@ -232,10 +232,16 @@
 }
 /* Small Screens (Tablets & Phones) */
 @media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+      }
     .menu-toggle {
         display: block;
     }
-
+    .content-area,
+      .sidebar-area {
+        min-width: 100%;
+      }
     .main-navigation {
         display: none;
         width: 100%;
