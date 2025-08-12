@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			printf(
 				/* translators: 1: number of comments */
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 				number_format_i18n( get_comments_number() )
 			);
 			?>
-		</h2>
+		</h3>
 
 		<ol class="comment-list">
 			<?php

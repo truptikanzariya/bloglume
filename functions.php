@@ -145,3 +145,8 @@ if ( ! function_exists( 'wp_body_open' ) ) {
  * Include additional theme functions.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';

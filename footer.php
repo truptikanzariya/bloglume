@@ -17,7 +17,7 @@
 				<?php
 				$link = sprintf(
 					'<a href="%1$s" title="%2$s" rel="%3$s">%4$s</a>',
-					esc_url( '#' ), // Provide your URL here instead of empty string
+					esc_url( 'https://profiles.wordpress.org/truptikanzariya' ), 
 					esc_attr__( 'WordPress Profile', 'bloglume' ),
 					'nofollow',
 					'Trupti Kanzariya'

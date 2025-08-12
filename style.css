@@ -96,6 +96,10 @@ article {
   font-size: 2rem;
 }
 
+.format-standard .entry-title h2 {
+  margin-left: 10px;
+}
+
 .entry-content {
   margin-top: 1rem;
 }
